@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="1" hostname="vinzor-virtual-machine" name="HelloWorldTest" skipped="0" tests="2" time="0.111" timestamp="2015-08-21T03:27:44">
+  <properties>
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="os.name" value="Linux" />
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/jdk1.7.0_45/jre/lib/resources.jar:/usr/lib/jvm/jdk1.7.0_45/jre/lib/rt.jar:/usr/lib/jvm/jdk1.7.0_45/jre/lib/sunrsasign.jar:/usr/lib/jvm/jdk1.7.0_45/jre/lib/jsse.jar:/usr/lib/jvm/jdk1.7.0_45/jre/lib/jce.jar:/usr/lib/jvm/jdk1.7.0_45/jre/lib/charsets.jar:/usr/lib/jvm/jdk1.7.0_45/jre/lib/jfr.jar:/usr/lib/jvm/jdk1.7.0_45/jre/classes" />
+    <property name="TODAY" value="August 21 2015" />
+    <property name="sun.desktop" value="gnome" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="ant.home" value="/opt/apache-ant-1.9.6" />
+    <property name="java.runtime.version" value="1.7.0_45-b18" />
+    <property name="ant.file.Project Argon" value="/home/Administrator/Documents/Part1/build.xml" />
+    <property name="distDir" value="/home/Administrator/Documents/Part1/dist" />
+    <property name="user.name" value="Administrator" />
+    <property name="ant.file.type.Project Argon" value="file" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk1.7.0_45/jre/lib/amd64" />
+    <property name="ant.project.default-target" value="dist" />
+    <property name="srcDir" value="/home/Administrator/Documents/Part1/src" />
+    <property name="ant.project.name" value="Project Argon" />
+    <property name="DSTAMP" value="20150821" />
+    <property name="java.version" value="1.7.0_45" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/jdk1.7.0_45/jre/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="UTF-8" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="51.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/usr/lib/jvm/jdk1.7.0_45/jre" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/home/Administrator/Documents/Part1/build.xml" />
+    <property name="os.version" value="3.5.0-23-generic" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="24.45-b08" />
+    <property name="ant.library.dir" value="/opt/apache-ant-1.9.6/lib" />
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
+    <property name="user.home" value="/home/Administrator" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.library.path" value="/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib" />
+    <property name="java.vendor.url" value="http://java.oracle.com/" />
+    <property name="testDir" value="/home/Administrator/Documents/Part1/src/test" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.apache.tools.ant.launch.Launcher -cp  junit" />
+    <property name="java.class.path" value="/opt/apache-ant-1.9.6/lib/ant-launcher.jar:/opt/apache-ant-1.9.6/lib/ant-apache-oro.jar:/opt/apache-ant-1.9.6/lib/ant-jmf.jar:/opt/apache-ant-1.9.6/lib/ant-antlr.jar:/opt/apache-ant-1.9.6/lib/ant-netrexx.jar:/opt/apache-ant-1.9.6/lib/ant-jai.jar:/opt/apache-ant-1.9.6/lib/ant-junit.jar:/opt/apache-ant-1.9.6/lib/ant-jsch.jar:/opt/apache-ant-1.9.6/lib/ant-testutil.jar:/opt/apache-ant-1.9.6/lib/ant-swing.jar:/opt/apache-ant-1.9.6/lib/ant-apache-resolver.jar:/opt/apache-ant-1.9.6/lib/ant-apache-log4j.jar:/opt/apache-ant-1.9.6/lib/junit.jar:/opt/apache-ant-1.9.6/lib/ant-commons-logging.jar:/opt/apache-ant-1.9.6/lib/ant-apache-bcel.jar:/opt/apache-ant-1.9.6/lib/ant.jar:/opt/apache-ant-1.9.6/lib/junit-4.9.jar:/opt/apache-ant-1.9.6/lib/ant-jdepend.jar:/opt/apache-ant-1.9.6/lib/ant-apache-xalan2.jar:/opt/apache-ant-1.9.6/lib/ant-junit4.jar:/opt/apache-ant-1.9.6/lib/ant-commons-net.jar:/opt/apache-ant-1.9.6/lib/ant-apache-regexp.jar:/opt/apache-ant-1.9.6/lib/ant-javamail.jar:/opt/apache-ant-1.9.6/lib/ant-apache-bsf.jar:/opt/apache-ant-1.9.6/lib/ant-launcher.jar:/usr/lib/jvm/jdk1.7.0_45/lib/tools.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.9.6 compiled on June 29 2015" />
+    <property name="TSTAMP" value="1127" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="ant.file.type" value="file" />
+    <property name="buildDir" value="/home/Administrator/Documents/Part1/build" />
+    <property name="java.vm.specification.version" value="1.7" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="java.io.tmpdir" value="/tmp" />
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment" />
+    <property name="java.ext.dirs" value="/usr/lib/jvm/jdk1.7.0_45/jre/lib/ext:/usr/java/packages/lib/ext" />
+    <property name="user.dir" value="/home/Administrator/Documents/Part1" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/home/Administrator/Documents/Part1" />
+    <property name="ant.java.version" value="1.7" />
+    <property name="ant.core.lib" value="/opt/apache-ant-1.9.6/lib/ant.jar" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="java.specification.version" value="1.7" />
+    <property name="ant.project.invoked-targets" value="junit" />
+  </properties>
+  <testcase classname="HelloWorldTest" name="testHello" time="0.002" />
+  <testcase classname="HelloWorldTest" name="testHello2" time="0.01">
+    <failure message="expected:&lt;Hello World[]&gt; but was:&lt;Hello World[!]&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;Hello World[]&gt; but was:&lt;Hello World[!]&gt;
+	at HelloWorldTest.testHello2(Unknown Source)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project default="run" name="Project Argon">
+    <description>GridWorldPart5</description>
+ 
+    <property name="srcDir" location="."/>
+    <property name="buildDir" location="./build"/>
+    <property name="distDir" location="./dist"/>
+    <property name="testDir" location="${srcDir}/test"/>
+ 
+    <target name="init">
+       <tstamp/>
+       <mkdir dir="${buildDir}"/>
+       <mkdir dir="${distDir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+       <javac srcdir="${srcDir}"
+              destdir="${buildDir}"
+              includes="*.java"
+              classpath=".:../GridWorldCode/gridworld.jar"/>
+    </target>
+
+    <target name="run" depends="compile">
+       <java className="SparseGridRunner"
+             classpath="../GridWorldCode/gridworld.jar:${buildDir}:${buildDir}/info/gridworld/grid/"
+             fork="true"/>
+    </target>
+
+    <target name="dist" depends="run">
+       <jar destfile="${distDir}/package-${DSTAMP}.jar" basedir="${buildDir}">
+         <manifest>
+           <attribute name="Built-By" value="${user.name}"/>
+           <attribute name="Main-Class" value="package.Main"/>
+         </manifest>
+       </jar>
+       <jar destfile="${distDir}/package-src-${DSTAMP}.jar" basedir="${srcDir}"/>
+    </target>
+ 
+    <target name="clean">
+      <delete dir="${buildDir}"/>
+      <delete dir="${distDir}"/>
+    </target>
+</project>

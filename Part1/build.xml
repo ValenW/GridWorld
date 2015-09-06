@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<project default="dist" name="Project Argon">
+    <description>A simple Java project</description>
+ 
+    <property name="srcDir" location="src"/>
+    <property name="buildDir" location="build"/>
+    <property name="distDir" location="dist"/>
+    <property name="testDir" location="${srcDir}/test"/>
+ 
+    <target name="init">
+       <tstamp/>
+       <mkdir dir="${buildDir}"/>
+       <mkdir dir="${distDir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+       <javac srcdir="${srcDir}"
+              destdir="${buildDir}"
+              excludes="test/*Test.java"
+              includeantruntime="false" />
+    </target>
+
+    <target name="run" depends="compile">
+       <java className="HelloWorld" classpath="${buildDir}"/>
+       <java className="Calculator" classpath="${buildDir}" fork="true"/>
+    </target>
+
+    <target name="junit" depends="compile">
+        <javac srcdir="${testDir}"
+              destdir="${buildDir}"/>
+        <junit printsummary="yes" haltonfailure="no">
+	    <!-- test class -->
+	    <classpath location="${buildDir}" />
+	    <test name="HelloWorldTest" 
+		  haltonfailure="no" todir="${buildDir}">
+		  <formatter type="plain" />
+		  <formatter type="xml" />
+	    </test>
+      </junit>
+    </target>
+
+    <target name="dist" depends="run">
+       <jar destfile="${distDir}/package-${DSTAMP}.jar" basedir="${buildDir}">
+         <manifest>
+           <attribute name="Built-By" value="${user.name}"/>
+           <attribute name="Main-Class" value="package.Main"/>
+         </manifest>
+       </jar>
+       <jar destfile="${distDir}/package-src-${DSTAMP}.jar" basedir="${srcDir}"/>
+    </target>
+ 
+    <target name="clean">
+      <delete dir="${buildDir}"/>
+      <delete dir="${distDir}"/>
+    </target>
+</project>

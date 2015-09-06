@@ -1,0 +1,8 @@
+Set 2
+1. The farthest instence that the bug can move in a diraction.
+2. The instence that the bug have moved in a instence far from now.
+3. So that the bug can turn 90 to the right, and can form a size of square.
+4. because that the BoxBug class is inherited from the Bug class, so  it can use the move method of the Bug class.
+5. Yes, the size won't change because the property sideLength won't change.
+6. Yes, when the BoxBug meat a rock or a wall, the path may change.
+7. When the BoxBug was just constructed or when the BoxBug had turn 90 degrees to the right.

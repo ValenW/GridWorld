@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<project default="compile" name="Project Argon">
+    <description>GridWorld</description>
+ 
+    <property name="srcDir" location="."/>
+    <property name="buildDir" location="./build"/>
+    <property name="distDir" location="./dist"/>
+    <property name="testDir" location="${srcDir}/test"/>
+ 
+    <target name="init">
+       <tstamp/>
+       <mkdir dir="${buildDir}"/>
+       <mkdir dir="${distDir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+       <javac srcdir="${srcDir}"
+              includes="E5/*.java"
+              destdir="${buildDir}"
+              excludes="*Test.java"
+              classpath="${buildDir}:../GridWorldCode/projects/critters:../GridWorldCode/gridworld.jar"/>
+    </target>
+
+    <target name="e1" depends="compile">
+       <java className="ChameleonRunner" classpath="${buildDir}:../GridWorldCode/projects/critters:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="e2" depends="compile">
+       <java className="ChameleonKidRunner" classpath="${buildDir}:../GridWorldCode/projects/critters:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="e3" depends="compile">
+       <java className="RockHoundRunner" classpath="${buildDir}:../GridWorldCode/projects/critters:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="e4" depends="compile">
+       <java className="BlusterCritterRunner" classpath="${buildDir}:../GridWorldCode/projects/critters:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="e5" depends="compile">
+       <java className="QuickCrabRunner" classpath="${buildDir}:../GridWorldCode/projects/critters:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="e6" depends="compile">
+       <java className="KingCrabRunner" classpath="${buildDir}:../GridWorldCode/projects/critters:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="run" depends="e1, e2, e3, e4, e5, e6"/>
+
+    <target name="dist" depends="run">
+       <jar destfile="${distDir}/package-${DSTAMP}.jar" basedir="${buildDir}">
+         <manifest>
+           <attribute name="Built-By" value="${user.name}"/>
+           <attribute name="Main-Class" value="package.Main"/>
+         </manifest>
+       </jar>
+       <jar destfile="${distDir}/package-src-${DSTAMP}.jar" basedir="${srcDir}"/>
+    </target>
+ 
+    <target name="clean">
+      <delete dir="${buildDir}"/>
+      <delete dir="${distDir}"/>
+    </target>
+</project>

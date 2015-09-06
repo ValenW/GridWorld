@@ -1,0 +1,109 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Calculator extends Frame
+    implements WindowListener {
+    private Label cal, equ, answer;
+    private Button addBtn, subBtn, mulBtn, divBtn, okBtn;
+    private JTextField num1, num2;
+
+    public Calculator() {
+        setLayout(new GridLayout(2, 5, 5, 5));
+
+        num1 = new JTextField("2");
+        num2 = new JTextField("1");
+        num1.setHorizontalAlignment(JTextField.CENTER);
+        num2.setHorizontalAlignment(JTextField.CENTER);
+        cal = new Label("", Label.CENTER);
+        equ = new Label("=", Label.CENTER);
+        answer = new Label("", Label.CENTER);
+        addBtn = new Button("+");
+        subBtn = new Button("-");
+        divBtn = new Button("/");
+        mulBtn = new Button("*");
+        okBtn = new Button("OK");
+         
+        add(num1);
+        add(cal);
+        add(num2);
+        add(equ);
+        add(answer);
+        add(addBtn);
+        add(subBtn);
+        add(mulBtn);
+        add(divBtn);
+        add(okBtn);
+
+        addWindowListener(this);
+
+        BtnListener btnListener = new BtnListener();
+        
+        addBtn.addActionListener(btnListener);
+        subBtn.addActionListener(btnListener);
+        mulBtn.addActionListener(btnListener);
+        divBtn.addActionListener(btnListener);
+        okBtn.addActionListener(btnListener);
+
+        setTitle("Calculator");
+        setSize(500, 200);
+        
+        setVisible(true);
+
+    }
+
+    public static void main(String[] args) {
+        new Calculator();
+    }
+
+    private class BtnListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String btnText = e.getActionCommand();
+            if (!btnText.equals("OK")) {
+                cal.setText(btnText);
+            } else {
+                float n1, n2;
+                try {
+                    n1 = Float.parseFloat(num1.getText());
+                    n2 = Float.parseFloat(num2.getText());
+                } catch (NumberFormatException ne) {
+                    answer.setText("Not a Num!");
+                    return;
+                }
+
+                if (cal.getText().equals("")) return;
+                if (cal.getText().equals("+")) {
+                    answer.setText(n1 + n2 + "");
+                } else if (cal.getText().equals("-")) {
+                    answer.setText(n1 - n2 + "");
+                } else if (cal.getText().equals("*")) {
+                    answer.setText(n1 * n2 + "");
+                } else if (cal.getText().equals("/")) {
+                    if (n2 == 0) { answer.setText("Not a Num"); return; }
+                    answer.setText(n1 / n2 + "");
+                }
+                
+            }
+        }
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        System.exit(0);
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) { }
+    @Override
+    public void windowClosed(WindowEvent e) { }
+    @Override
+    public void windowIconified(WindowEvent e) { }
+    @Override
+    public void windowDeiconified(WindowEvent e) { }
+    @Override
+    public void windowActivated(WindowEvent e) { }
+    @Override
+    public void windowDeactivated(WindowEvent e) { }
+}
+

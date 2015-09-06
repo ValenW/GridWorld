@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<project default="compile" name="Project Argon">
+    <description>GridWorld</description>
+ 
+    <property name="srcDir" location="."/>
+    <property name="buildDir" location="./build"/>
+    <property name="distDir" location="./dist"/>
+    <property name="testDir" location="${srcDir}/test"/>
+ 
+    <target name="init">
+       <tstamp/>
+       <mkdir dir="${buildDir}"/>
+       <mkdir dir="${distDir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+       <javac srcdir="${srcDir}"
+              includes="*/*.java"
+              destdir="${buildDir}"
+              excludes="*Test.java"
+              classpath="${buildDir}:../GridWorldCode/gridworld.jar"/>
+    </target>
+
+    <target name="CircleBug" depends="compile">
+       <java className="CircleBugRunner" classpath="${buildDir}:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="DancingBug" depends="compile">
+       <java className="DancingBugRunner" classpath="${buildDir}:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="SpiralBug" depends="compile">
+       <java className="SpiralBugRunner" classpath="${buildDir}:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="ZBug" depends="compile">
+       <java className="ZBugRunner" classpath="${buildDir}:../GridWorldCode/gridworld.jar" fork="true"/>
+    </target>
+
+    <target name="run" depends="ZBug, SpiralBug, DancingBug, CircleBug"/>
+
+    <target name="dist" depends="run">
+       <jar destfile="${distDir}/package-${DSTAMP}.jar" basedir="${buildDir}">
+         <manifest>
+           <attribute name="Built-By" value="${user.name}"/>
+           <attribute name="Main-Class" value="package.Main"/>
+         </manifest>
+       </jar>
+       <jar destfile="${distDir}/package-src-${DSTAMP}.jar" basedir="${srcDir}"/>
+    </target>
+ 
+    <target name="clean">
+      <delete dir="${buildDir}"/>
+      <delete dir="${distDir}"/>
+    </target>
+</project>

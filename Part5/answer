@@ -1,0 +1,33 @@
+Set 10
+1. Specified in the Grid class, implemented in the BoundedGrid and UnboundedGrid class.
+2. ArrayList<Location> getValidAdjacentLocations(Location loc);
+   Because all other mathods will call this mathod when it's need to get some positions. So it ensure that all the position prossesed is valid.
+3. ArrayList<Location> getOccupiedAdjacentLocations(Location loc);
+   The AbstractGrid class.
+4. Because the getEmptyAdjacentLocations mathod should ensure that all the locations it returns are empty, or there is no actor in the position. The get method is use to get the actor in the position.
+5. Then the returns won't contain the valid positions in the diagonal line.
+
+Set 11
+1. There must be 1 Rows and 1 Cols in the BoundedGrid (or a IllegalArgumentException will be throw). So it has at least one valid position.
+2. occupantArray[0].length.
+   According to the constructor precondition, numRows() > 0, so theGrid[0] is non-null.
+3. The position's Row and Col shouldn't be less than 0. And it's Row less than getNumRows(), it's Col less than getNumCols().
+4. ArrayList<Location>
+   O(r*c). ( When the Gird is seted, the r and c will be constent, so it can be considered of O(1). )
+5. E
+   O(1)
+6. The location isn't valid, or the object to put is null.
+   O(1)
+7. E
+   Nothing happens and null will be returned.
+   O(1)
+8. Yes. O(1) is The lowest time complexity, so the implementation is efficient enough.
+
+Set 12
+1. int hashCode();
+   The Locations must be totally ordered.
+   Yes, the method int compareTo(Object other) provide a order between two positions.
+2. Because the position must exist when call these mathods. In the BoundedGrid the isValid() has checked this condition.
+3.  O(1), O(1), O(1)
+    O(log(n)), O(log(n)), O(log(n))
+4. 

@@ -1,0 +1,36 @@
+Set7
+1. void act();
+   ArrayList<Actor> getActors();
+   void processActors(ArrayList<Actor> actors);
+   ArrayList<Location> getMoveLocations();
+   Location selectMoveLocation(ArrayList<Location> locs);
+   void makeMove(Location loc);
+2. getActors, processActors, getMoveLocations, selectMoveLocation and makeMove.
+3. Maybe. If the subclass want to look elsewhere for actors to process instead of just the neighboring actors.
+***4. Call the actor's own mathods to process the actor, such as remove from the grid.
+5. ArrayList<Location> getMoveLocations();
+       // determine of which locations are candidates for the move
+   Location selectMoveLocation(ArrayList<Location> locs);
+       // select one of the candidates to move
+   void makeMove(Location loc);
+       // make the move
+6. Because Critter extends form Actor, and there is no property to initialize in Critter, so use the Actor's constructor is ok.
+
+Set8
+1. Because the mathods that the act invokes was override.(procesActors, makeMove)
+2. to avoid duplications.
+3. Add 
+       "Flower flower = new Flower(getColor());
+        flower.putSelfInGrid(gr, loc);"
+   before the super.makeMove() is called.
+4. Because the ChameleonCritter just process the actor around it, so there is no need to override the getActors method.
+5. The Actor class
+6. Invoke the getGrid method.
+
+Set9
+1. Because it just want the actors in front, to the right-front, or to the left-front of it instead of all the actors around it.
+2. First calls the getActors mathod to get the actors that should be ate. Then the processActors method will be called, all the actors selected will call removeFormGrid method themselves.
+3. To get the positions around in one or more directions.
+   The mathod getAdjacentLocation can just return one pisition in one direction, but in this case there may be more than one direction and so more than one psition. So it is necessary to use a new method.
+4. (4, 3), (4, 4), (4, 5)
+5. 

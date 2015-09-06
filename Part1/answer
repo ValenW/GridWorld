@@ -1,0 +1,37 @@
+1.No. If the direction the bug move to have no position, the bug will stay and turn around a 45'
+2.0, 45, 90, 135...315, 0.
+3.turn around a dieroug
+4.a flower
+5.turn or move
+6.turn
+7.no.
+8.changgeits color with time goes by.
+9.no, no any behavior
+10.no, at most one actor can be in the same position in the same time
+
+
+Degrees
+	
+1.
+Compass Direction
+
+0	North
+45	NorthEast
+90	East
+135	SouthEast
+180	South
+225	SouthWest
+270	West
+315	NorthWast
+360	North
+
+2.
+any, immidietely, inside the grid, there is a bug report
+
+3.
+void setColor(java.awt.Color);
+
+4.
+the bug disapper.
+
+

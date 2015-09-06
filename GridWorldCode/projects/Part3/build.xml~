@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<project default="dist" name="Project Argon">
+    <description>A simple Java project</description>
+ 
+    <property name="srcDir" location="src"/>
+    <property name="buildDir" location="build"/>
+    <property name="distDir" location="dist"/>
+    <property name="testDir" location="${srcDir}/test"/>
+ 
+    <target name="init">
+       <tstamp/>
+       <mkdir dir="${buildDir}"/>
+       <mkdir dir="${distDir}"/>
+    </target>
+
+    <target name="compile" depends="init">
+       <javac srcdir="${srcDir}"
+              destdir="${buildDir}"
+              excludes="test/*Test.java"
+              includeantruntime="false"
+              classpath="${buildDir}:../GridWorldCode/gridworld.jar"/>
+    </target>
+
+    <target name="run" depends="compile">
+       <java className="HelloWorld" classpath="${buildDir}"/>
+       <java className="Calculator" classpath="${buildDir}" fork="true"/>
+    </target>
+
+    <target name="junit" depends="compile">
+        <javac srcdir="${testDir}"
+               destdir="${buildDir}"
+               classpath="${buildDir}:../GridWorldCode/gridworld.jar"/>
+        <junit printsummary="yes" haltonfailure="no">
+            <classpath refid="org.junit.runner.JUnitCore
+" />
+	    <!-- test class -->
+	    <classpath location="${buildDir}" />
+	    <classpath location="." />
+	    <test name="JumperTest" 
+		  haltonfailure="no" todir="${buildDir}">
+		  <formatter type="plain" />
+		  <formatter type="xml" />
+	    </test>
+      </junit>
+    </target>
+
+    <target name="dist" depends="run">
+       <jar destfile="${distDir}/package-${DSTAMP}.jar" basedir="${buildDir}">
+         <manifest>
+           <attribute name="Built-By" value="${user.name}"/>
+           <attribute name="Main-Class" value="package.Main"/>
+         </manifest>
+       </jar>
+       <jar destfile="${distDir}/package-src-${DSTAMP}.jar" basedir="${srcDir}"/>
+    </target>
+ 
+    <target name="clean">
+      <delete dir="${buildDir}"/>
+      <delete dir="${distDir}"/>
+    </target>
+</project>

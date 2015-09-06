@@ -1,0 +1,44 @@
+1. int row1 = loc1.getRow();
+2. false
+3. (3, 3)
+4. 45
+5. it may return the location that reached when going towards the direction form the location now.
+
+1. int objNum = getOccupiedLocations();
+   int emptyLocNum = getNumRows() * getNumCols() - getOccupiedLocations()
+2. theGrid.isValid(new Location(10, 10));
+3. because the Grid is just a interface, the implementations can be finded in class BoundedGrid and UnboundedGrid. 
+4. yes. using array is more efficient than ArrayList. and there si no need to store values of different types in the array.
+
+1. Position, Direction, Color
+2. Location.NORTH 0, Color.BLUE (0, 0, 255)
+3. Because the Actor has its own method, instead of just a empty shell. And why it should not be a interface but a class is because that all the actor have some method in common, so it should be fill in the Actor to avoid duplications.
+4. No. There is a wrong massage says that "This actor is already contained in a grid."
+   No. There is a wrong massage says that "This actor is not contained in a grid."
+   Yes. The actor will apear in the location it finally puted itself in.
+5. setDirection(getDirection() + Location.RIGHT);
+
+
+1. if (!gr.isValid(next)) return false;
+2. Actor neighbor = gr.get(next);
+   return (neighbor == null) || (neighbor instanceof Flower);
+   // if the next is a rock, then it return false.
+3. boolean isValid(Location loc); 
+       // to get whether the next location is out of grid
+   E get(Location loc); 
+       // to get the actor in the next location
+4. Location getAdjacentLocation(int direction);
+       // to get the next location the bug should move to
+5. Location getLocation();
+       // to get the location the bug is now.
+   Grid<Actor> getGrid();
+       // to get the grid the bug is in now
+6. it will call removeSelfFromGrid() and remove itself form the grid and disapear.
+7. Yes, it needed. When comes to flower.putSelfInGrid(gr, loc); the loc cant't be replaced by getLocation() because the location the bug is in now had been changed.
+8. Because the new flower is created by "new Flower(getColor());" and the getColor() return the bug's color.
+9. Yes, it does.
+10. Flower flower = new Flower(getColor());
+        flower.putSelfInGrid(gr, loc);
+11. 4 times
+
+
